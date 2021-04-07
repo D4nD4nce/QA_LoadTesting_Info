@@ -6,24 +6,31 @@
 
 ---
 Создать именованный список с параметрами:
+
 http://localhost:8088/listoffer?param=${login}&value=${doc_id}   
 
 где param - имя списка в очереди, value - записываемое значение
 
 ---
 Забрать значение из списка:
+
 http://localhost:8088/listpoll?param=${login}
 
 ---
 Значение заменяется каждый раз при обновлении и удаляется при считывании:
+
 http://localhost:8088/valueput?param=par1&value=1
+
 http://localhost:8088/valuepoll?param=par1
 
 ---
 Инфа о всех списках (имена и количество записей в каждом):
+
 http://localhost:8088/listinfo
 
 ---
 Еще примеры:
+
 http://localhost:8088/listoffer?param=eplatonova&value=1
+
 http://localhost:8088/listpoll?param=eplatonova
