@@ -1,3 +1,5 @@
+
+_*Общее описание работы*_
 Архив 'get_grafana_graph.zip' распаковать в любую директорию, туда же будут выгружаться графики по умолчанию.
 
 Содержимое:
@@ -25,7 +27,7 @@
 
 
 Основные параметры.
-Для лучшего понимания следует активировать рендер (любой график дашборда → "share" → "Direct link rendered image") и проанализировать ссылку, получаемую в адресной строке браузера. Получится нечто вроде этого.
+Для лучшего понимания следует активировать рендер (любой график дашборда → "share" → "Direct link rendered image") и проанализировать ссылку, получаемую в адресной строке браузера. Получится [нечто вроде этого](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/grafana_graph_downloader/examples/description_2.png).
 
 1. grafana_url - адрес grafana (Пример: http://localhost:3000/)
 1. bearer_key - заранее сгенереный API-ключ авторизации (Пример: eyJrIjoiaDNjeFR0TVV1andjdUJjTGh4MjR1azJhZTRTQXBmZDgiLCJuIjoiZ2V0X2dyYXBoX3V0aWwiLCJpZCI6MX0=), схема получения - выше.
