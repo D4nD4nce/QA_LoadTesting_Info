@@ -133,8 +133,7 @@ Jmeter при запуске с использованием файла `*.prope
 
 
 ### Файлы:
-Пример CSV файла
-Пример XLSX файла
-
-Утилита версии 1 - jar файл
-Утилита версии 2 - jar файл
+- Пример CSV файла - scripts_params.csv
+- Пример XLSX файла - scripts_params.xlsx
+- Утилита версии 1 - jmeter_parser_CSV.jar
+- Утилита версии 2 - jmeter_parser_ALL.jar
