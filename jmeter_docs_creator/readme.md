@@ -135,7 +135,7 @@ if (thisFile.exists()) {
 
 ---
 ## Использование NTSamplerStaticDocsCreator: генерация документов из файла параметров по шаблону.
-Имеет только один параметр, special-doc_with_parameters - в качестве значения должен быть указан абсолютный путь к файлу параметров. Пример входного файла параметров: !test_parameters.csv
+Имеет только один параметр, special-doc_with_parameters - в качестве значения должен быть указан абсолютный путь к файлу параметров. Пример входного файла параметров: [!test_parameters.csv](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/jmeter_docs_creator/!test_parameters.csv)
 
 Структура файла:
 ```
@@ -188,6 +188,4 @@ if (thisFile.exists()) {
 
 Архив библиотек: ext_lib.zip
 
-Файлы используемого шаблона (пока не изменяемы): file_1 и file_2
-
-Файл словаря (набор лексем): KeyWords
+Файлы используемого шаблона (пока не изменяемы) и словарь лексем: [в папке](https://github.com/D4nD4nce/QA_LoadTesting_Info/tree/main/jmeter_docs_creator/extra/samplers)
