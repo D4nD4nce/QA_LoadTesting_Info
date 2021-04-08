@@ -5,33 +5,15 @@
 
 При запуске приложения создаётся пустой экземпляр очереди, в котором можно создавать списки. Далее в каждый список можно грузить значение. При чтении значения из списка оно удаляется, благодаря этому достигается уникальность использования каждого значения.
 
----
-Создать именованный список с параметрами:
-
-http://localhost:8088/listoffer?param=${login}&value=${doc_id}   
-
-где param - имя списка в очереди, value - записываемое значение
-
----
-Забрать значение из списка:
-
-http://localhost:8088/listpoll?param=${login}
-
----
-Значение заменяется каждый раз при обновлении и удаляется при считывании:
-
-http://localhost:8088/valueput?param=par1&value=1
-
-http://localhost:8088/valuepoll?param=par1
-
----
-Инфа о всех списках (имена и количество записей в каждом):
-
-http://localhost:8088/listinfo
-
----
-Еще примеры:
-
-http://localhost:8088/listoffer?param=eplatonova&value=1
-
-http://localhost:8088/listpoll?param=eplatonova
+### Команды
+- listoffer - `http://localhost:8088/listoffer?param=list_name&value=list_value` -> создается именованный список с параметрами, где:
+  - `list_name` - имя списка в очереди
+  - `list_value` - записываемое значение
+- listpoll - `http://localhost:8088/listpoll?param=${login}` -> забирается значение из списка
+- Значение заменяется каждый раз при обновлении и удаляется при считывании:
+  - valueput - `http://localhost:8088/valueput?param=par1&value=1`
+  - valuepoll - `http://localhost:8088/valuepoll?param=par1`
+- listinfo - `http://localhost:8088/listinfo` -> Инфа о всех списках (имена и количество записей в каждом)
+- Еще примеры:
+  - `http://localhost:8088/listoffer?param=eplatonova&value=1`
+  - `http://localhost:8088/listpoll?param=eplatonova`
