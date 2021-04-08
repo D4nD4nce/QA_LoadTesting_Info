@@ -1,4 +1,6 @@
 # Общее описание
+Данная утилита позволяет интегрировать Load Runner и InfluxDB. Информация о выполненной транзакции отправляется в influx при каждом вызове `lr_end_transaction()`.
+> Утилита работает только при использовании протокола `web/http`.
 
 Для корректной работы необходимо внести изменения в уже созданный скрипт:
 
@@ -7,18 +9,21 @@
 - Добавить `#include "influx.h"` в самый конец блока `Include Files` внутри `globals.h`.
 - Для группы `extra files` выполнить ПКМ, выбрать `Add files to script` и добавить `influx.h`.
 - Внутри файла `influx.h` скорректировать значения параметров: 
-  - `INFLUX_HOST "http://[host]:[port]"`, пример: `#define INFLUX_HOST "http://172.30.48.58:8510"`
-  - INFLUX_DB_NAME "[имя базы данных инфлюкс]", пример: #define INFLUX_DB_NAME "resultsdb"
-  - INFLUX_MEASUREMENT_NAME "[имя measurement influx]", пример: #define INFLUX_MEASUREMENT_NAME "jmeter"
-  - NODE_NAME_DEFAULT "[имя машины, с которой подается нагрузка]", пример: #define NODE_NAME_DEFAULT "default"
-  - APPLICATION_NAME "[имя приложения, из которого подается нагрузка]", пример: #define APPLICATION_NAME "loadRunner"
-  fdsgfdsgdfhh cghghsghg
+  - INFLUX_HOST - `"http://[host]:[port]"`
+  - INFLUX_DB_NAME - `"[имя базы данных инфлюкс]"`
+  - INFLUX_MEASUREMENT_NAME - `"[имя measurement influx]"`
+  - NODE_NAME_DEFAULT - `"[имя машины, с которой подается нагрузка]"`
+  - APPLICATION_NAME - `"[имя приложения, из которого подается нагрузка]"`
 
+Пример заполненных параметров в коде:
+```
+#define INFLUX_HOST "http://127.0.0.1:8080"
+#define INFLUX_DB_NAME "resultsdb"
+#define INFLUX_MEASUREMENT_NAME "jmeter"
+#define NODE_NAME_DEFAULT "my_node_name"
+#define APPLICATION_NAME "loadRunner"
+```
+-> Теперь можно использовать скрипт со стандартными функциями `lr_start_transaction()` и `lr_end_transaction()` - при каждом вызове `lr_end_transaction()` внутри каждого потока будет осуществляться отправка запроса в Influx со всеми параметрами. Это может создавать серьезную нагрузку на сеть при подаче высокоинтенсивной нагрузки, поэтому рекомендуется использовать утилиту с осторожностью.
 
-
--> Теперь можно использовать скрипт со стандартными функциями lr_start_transaction() и lr_end_transaction() - при каждом вызове lr_end_transaction() внутри каждого потока будет осуществляться отправка запроса в Influx со всеми параметрами. Это может создавать серьезную нагрузку на сеть при подаче высокоинтенсивной нагрузки, поэтому рекомендуется использовать утилиту с осторожностью.
-
-> Важно: утилита работает только при использовании протокола web/http.
-
----
+### Файл
 Утилита: influx.h
