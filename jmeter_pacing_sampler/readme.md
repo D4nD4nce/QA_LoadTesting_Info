@@ -11,5 +11,5 @@
 ![например так](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/jmeter_pacing_sampler/description_pictures/example_gui_2.png)
 
 ### Файлы
-Исходники: в архиве sources.zip
-Скомпилированный плагин: pacing-plugin-1.0.jar
+- Исходники: в архиве sources.zip
+- Скомпилированный плагин: pacing-plugin-1.0.jar
