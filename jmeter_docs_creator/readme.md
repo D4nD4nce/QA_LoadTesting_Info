@@ -183,9 +183,6 @@ if (thisFile.exists()) {
 
 ---
 ## Используемые файлы:
-
-разработанный плагин: original-jmeter_param_creator-1.0-SNAPSHOT.jar
-
-Архив библиотек: ext_lib.zip
-
-Файлы используемого шаблона (пока не изменяемы) и словарь лексем: [в папке](https://github.com/D4nD4nce/QA_LoadTesting_Info/tree/main/jmeter_docs_creator/extra/samplers)
+- Разработанный плагин: original-jmeter_param_creator-1.0-SNAPSHOT.jar
+- Архив библиотек: ext_lib.zip
+- Файлы используемого шаблона (пока не изменяемы) и словарь лексем: [в папке](https://github.com/D4nD4nce/QA_LoadTesting_Info/tree/main/jmeter_docs_creator/extra/samplers)
