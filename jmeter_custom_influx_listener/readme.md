@@ -41,27 +41,27 @@
 1. influxDB_name - имя базы данных influx, в которую необходимо провести запись точек из файлов логов.
 
 ---
-
 По итогу работы плагина в базе данных influx будет создано измерение (measurement) с полями:
-
 - timestamp (primary key in nanosec) - таймстамп момента окончания транзакции в милисекундах;
 - node (tag value) - имя генератора подачи нагрузки;
 - application (tag value) - имя приложения подачи нагрузки;
+- thread (tag value) - имя потока = имя thread_group + номер потока.
+- transaction (tag value) - имя транзакции (операции)
+- status (tag value) - статус "pass/fail"
+- value (field value) - время выполения транзакции (операции) в милисекундах
 
+Опциональные поля, могут быть пусты для сэмплеров, которые не являются request запросами:
+- response_code (tag value) - код ответа
+- response_headers (tag value) - хэдеры ответа
+- response_data (tag value) - тело ответа
+- response_message (tag value) - сообщение из sampler. Обычно либо "OK", либо сообщение об ошибке.
+- request_data (tag value) - полная инфа из сэмплера: groovy code, url, body, cookies и тд
+- request_headers (tag value) - хэдеры запроса
+- request_url (tag value) - url адрес запроса
 
-Поля:
-
-* response_code
-* response_headers
-* response_data
-* response_message
-* request_data
-* request_headers
-* request_url
-
--> опциональны. Могут быть пусты для сэмплеров, которые не являются request запросами.
-
-
+---
 Плагин: influx_listener_plugin.jar
+
 Вспомогательный скрипт отправки логов в influx: send_influx_info.jmx
+
 Пример дашборда для Grafana: dash.json
