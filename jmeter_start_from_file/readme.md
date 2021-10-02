@@ -129,7 +129,7 @@ Jmeter при запуске с использованием файла `*.prope
 ![пример 2](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/jmeter_start_from_file/description_imgs/jmeter_params_2.png)
 Итоговая строчка имеет простую схему: `${__property([имя запрашиваемой переменной среды], [имя переменной, в которую будет сохранен результат], [имя переменной, из которой будет взято значение по умолчанию в случае, если переменная среды не найдена])}` - кроме того, эта функция еще и возвращает результат своей работы. Описание работы этой функции есть в документации Jmeter.
 3. Тред группа. Должна быть размещена после двух предыдущих файлов, так как использует получаемые в них значения. Здесь видно, что полученные из переменных среды значения используются как параметры запуска Concurrency Thread Group.
-![пример 3](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/jmeter_start_from_file/description_imgs/jmeter_params_2.png)
+![пример 3](https://github.com/D4nD4nce/QA_LoadTesting_Info/blob/main/jmeter_start_from_file/description_imgs/jmeter_params_3.png)
 
 Подытоживая:
 - имена запрашиваемых в Jmeter переменных среды и названия параметров из общего файла параметров (1-я строка) должны быть идентичны.
